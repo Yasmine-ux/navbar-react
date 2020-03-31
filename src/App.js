@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './navbar.js';
+const tab = [
+  {name:'Home', ref:'https://www.home.com/',},
+  {name:'Service', ref:'https://www.service.com/', drop :[
+      {name:'For entrepreneurs', ref:'https://ent.com/'},
+      {name:'For student', ref:'https://ent.com/'},
+      {name:'For hobbyists', ref:'https://ent.com/'}
+    ]
+  },
+  {name:'Contact', ref:'https://www.contact.com/',},
+  ]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="menu">
+      <ul className='list'>
+      <Navbar navcontainer={tab} />
+      </ul>
     </div>
-  );
+    )
 }
-
 export default App;
+
+
